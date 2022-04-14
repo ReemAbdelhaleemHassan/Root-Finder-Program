@@ -360,10 +360,10 @@ def MethodSelection(expression):
     a_fal = ttk.Entry(tab2)
     b_fal = ttk.Entry(tab2)
 
-    cal_button = ttk.Button(tab2, text='Calculate',
+    cal_button_2 = ttk.Button(tab2, text='Calculate',
                             command=lambda: call_False_Position(expression, a_fal.get(), b_fal.get(),
                                                                 max_iteration.get(),
-                                                                epsilon.get(), tab2, cal_button))
+                                                                epsilon.get(), tab2, cal_button_2))
     m_i_label.pack()
     m_i_label.place(x=40, y=50)
     max_iteration.pack()
@@ -380,8 +380,8 @@ def MethodSelection(expression):
     b_label.place(x=545, y=50)
     b_fal.pack()
     b_fal.place(x=570, y=50, height=20, width=50)
-    cal_button.pack()
-    cal_button.place(x=675, y=50)
+    cal_button_2.pack()
+    cal_button_2.place(x=675, y=50)
 
     # --------------Fixed Point--------------
     f_label = ttk.Label(tab3, text='Function = ' + expression, font=("Arial", 18)).pack()
@@ -394,9 +394,9 @@ def MethodSelection(expression):
     gx = ttk.Entry(tab3)
     xi = ttk.Entry(tab3)
 
-    cal_button = ttk.Button(tab3, text='Calculate',
+    cal_button_3 = ttk.Button(tab3, text='Calculate',
                             command=lambda: call_Fixed_Point(gx.get(), xi.get(), max_iteration.get(),
-                                                             epsilon.get(), tab3, cal_button))
+                                                             epsilon.get(), tab3, cal_button_3))
     m_i_label.pack()
     m_i_label.place(x=40, y=50)
     max_iteration.pack()
@@ -413,8 +413,8 @@ def MethodSelection(expression):
     b_label.place(x=500, y=50)
     xi.pack()
     xi.place(x=600, y=50, height=20, width=50)
-    cal_button.pack()
-    cal_button.place(x=675, y=50)
+    cal_button_3.pack()
+    cal_button_3.place(x=675, y=50)
 
     # --------------Newton Raphson--------------
     f_label = ttk.Label(tab4, text='Function = ' + expression, font=("Arial", 18)).pack()
@@ -427,9 +427,9 @@ def MethodSelection(expression):
     a_new = ttk.Entry(tab4)
     # b_fal = ttk.Entry(tab4)
 
-    cal_button = ttk.Button(tab4, text='Calculate',
+    cal_button_4 = ttk.Button(tab4, text='Calculate',
                             command=lambda: call_Newton_Raphson(expression, a_new.get(), max_iteration.get(),
-                                                                epsilon.get(), tab4, cal_button))
+                                                                epsilon.get(), tab4, cal_button_4))
     m_i_label.pack()
     m_i_label.place(x=40, y=50)
     max_iteration.pack()
@@ -442,12 +442,8 @@ def MethodSelection(expression):
     a_label.place(x=370, y=50)
     a_new.pack()
     a_new.place(x=490, y=50, height=20, width=50)
-    # b_label.pack()
-    # b_label.place(x=545, y=50)
-    # b_fal.pack()
-    # b_fal.place(x=570, y=50, height=20, width=50)
-    cal_button.pack()
-    cal_button.place(x=675, y=50)
+    cal_button_4.pack()
+    cal_button_4.place(x=675, y=50)
 
     # --------------Secant--------------
     f_label = ttk.Label(tab5, text='Function = ' + expression, font=("Arial", 18)).pack()
@@ -460,9 +456,9 @@ def MethodSelection(expression):
     a_sec = ttk.Entry(tab5)
     b_sec = ttk.Entry(tab5)
 
-    cal_button = ttk.Button(tab5, text='Calculate',
+    cal_button_5 = ttk.Button(tab5, text='Calculate',
                             command=lambda: call_Secant(expression, a_sec.get(), b_sec.get(), max_iteration.get(),
-                                                        epsilon.get(), tab5, cal_button))
+                                                        epsilon.get(), tab5, cal_button_5))
     m_i_label.pack()
     m_i_label.place(x=40, y=50)
     max_iteration.pack()
@@ -479,8 +475,8 @@ def MethodSelection(expression):
     b_label.place(x=455, y=50)
     b_sec.pack()
     b_sec.place(x=480, y=50, height=20, width=50)
-    cal_button.pack()
-    cal_button.place(x=675, y=50)
+    cal_button_5.pack()
+    cal_button_5.place(x=675, y=50)
 
 
 def check_expr(expression):

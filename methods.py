@@ -81,8 +81,19 @@ def false_position(expr, x_lower, x_upper, list, es, maxit): #same as bisection 
             break
         iter = i
         xr_old = xr
-        # print(i, xr)
-        list.insert('', 'end', text=str(i), values=(str(i), str(x_lower), str(x_upper), str(xr), str(f(xr))))
+        list.insert(
+            '',
+            'end',
+            text=str(iter),
+            values=(
+                str(iter),
+                str(x_lower),
+                str(x_upper),
+                str(xr),
+                str(f(xr)),
+            ),
+        )
+
     if iter >= maxit:
         print('zero not found to desired tolerance')
     return xr
@@ -183,13 +194,7 @@ def secant(expr, x1, x2, list, epsilon, max_itr):
             # print(f"Root {x3} with Error = {err} ")
             # print("-------------------------------------------------------------------------")
             break
-        else:
-            x1 = x2
-            x2 = x3
+        x1 = x2
+        x2 = x3
         list.insert('', 'end', text=str(i), values=(str(i), str(x1), str(x2), str(x3), str(f(x3))))
-    # if i == max_itr - 1:
-        # print("-------------------------------------------------------------------------")
-        # print(f"{max_itr} has end reached")
-        # print(f"The last value computed is {x3} with Error = {err}")
-
     return x3

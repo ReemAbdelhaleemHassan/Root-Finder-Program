@@ -41,8 +41,9 @@ def plotting_window(expression):
 
 # Reading From Text File
 def open_file(function):
-    file = filedialog.askopenfile(mode='r', filetypes=[('Text Files', '*.txt')])
-    if file:
+    if file := filedialog.askopenfile(
+        mode='r', filetypes=[('Text Files', '*.txt')]
+    ):
         content = file.readline().replace('\n', '')
         file.close()
         function.set(str(content))
@@ -74,10 +75,26 @@ def call_Bisection(f, a, b, n, e, tab, button):
     end_time = time.time()
 
     er_label = ttk.Label(tab, text='Bisection Failed', font=("Courier", 15))
-    root_label = ttk.Label(tab, text='Approx. Root = ' + str(root), font=("Courier", 10))
-    time_label = ttk.Label(tab, text='Execution Time = ' + str(end_time - start_time), font=("Courier", 10))
-    iter_label = ttk.Label(tab, text='# of Iterations = ' + str(len(tree.get_children())), font=("Courier", 10))
-    k_label = ttk.Label(tab, text='Expected # of iterations = ' + str(k), font=("Courier", 10))
+    root_label = ttk.Label(
+        tab, text=f'Approx. Root = {str(root)}', font=("Courier", 10)
+    )
+
+    time_label = ttk.Label(
+        tab,
+        text=f'Execution Time = {str(end_time - start_time)}',
+        font=("Courier", 10),
+    )
+
+    iter_label = ttk.Label(
+        tab,
+        text=f'# of Iterations = {len(tree.get_children())}',
+        font=("Courier", 10),
+    )
+
+    k_label = ttk.Label(
+        tab, text=f'Expected # of iterations = {str(k)}', font=("Courier", 10)
+    )
+
 
     if root is None:
         er_label.pack()
@@ -124,9 +141,22 @@ def call_False_Position(f, a, b, n, e, tab, button):
     end_time = time.time()
 
     er_label = ttk.Label(tab, text='False Position Method Failed', font=("Courier", 15))
-    root_label = ttk.Label(tab, text='Approx. Root = ' + str(root), font=("Courier", 10))
-    time_label = ttk.Label(tab, text='Execution Time = ' + str(end_time - start_time), font=("Courier", 10))
-    iter_label = ttk.Label(tab, text='# of Iterations = ' + str(len(tree.get_children())), font=("Courier", 10))
+    root_label = ttk.Label(
+        tab, text=f'Approx. Root = {str(root)}', font=("Courier", 10)
+    )
+
+    time_label = ttk.Label(
+        tab,
+        text=f'Execution Time = {str(end_time - start_time)}',
+        font=("Courier", 10),
+    )
+
+    iter_label = ttk.Label(
+        tab,
+        text=f'# of Iterations = {len(tree.get_children())}',
+        font=("Courier", 10),
+    )
+
 
     if root is None:
         er_label.pack()
@@ -167,16 +197,27 @@ def call_Fixed_Point(f, a, n, e, tab, button):
     end_time = time.time()
 
     er_label = ttk.Label(tab, text='Fixed Point Method Failed', font=("Courier", 15))
-    root_label = ttk.Label(tab, text='Approx. Root = ' + str(root), font=("Courier", 10))
-    time_label = ttk.Label(tab, text='Execution Time = ' + str(end_time - start_time), font=("Courier", 10))
-    iter_label = ttk.Label(tab, text='# of Iterations = ' + str(len(tree.get_children())), font=("Courier", 10))
-    conv_label = ttk.Label(tab, text='G(X) ' + convergence, font=("Courier", 10))
+    root_label = ttk.Label(
+        tab, text=f'Approx. Root = {str(root)}', font=("Courier", 10)
+    )
+
+    time_label = ttk.Label(
+        tab,
+        text=f'Execution Time = {str(end_time - start_time)}',
+        font=("Courier", 10),
+    )
+
+    iter_label = ttk.Label(
+        tab,
+        text=f'# of Iterations = {len(tree.get_children())}',
+        font=("Courier", 10),
+    )
+
+    conv_label = ttk.Label(tab, text=f'G(X) {convergence}', font=("Courier", 10))
 
     if root is None:
         er_label.pack()
         er_label.place(x=500, y=250)
-        conv_label.pack()
-        conv_label.place(x=475, y=400)
     else:
         root_label.pack()
         root_label.place(x=475, y=150)
@@ -184,10 +225,8 @@ def call_Fixed_Point(f, a, n, e, tab, button):
         time_label.place(x=475, y=250)
         iter_label.pack()
         iter_label.place(x=475, y=350)
-        conv_label.pack()
-        conv_label.place(x=475, y=400)
-
-
+    conv_label.pack()
+    conv_label.place(x=475, y=400)
     tree.pack(fill=BOTH)
     tree.place(x=50, y=100, height=300, width=400)
     iterations.place(x=450, y=100, height=300)
@@ -216,9 +255,22 @@ def call_Newton_Raphson(f, a, n, e, tab, button):
     end_time = time.time()
 
     er_label = ttk.Label(tab, text='Fixed Point Method Failed', font=("Courier", 15))
-    root_label = ttk.Label(tab, text='Approx. Root = ' + str(root), font=("Courier", 10))
-    time_label = ttk.Label(tab, text='Execution Time = ' + str(end_time - start_time), font=("Courier", 10))
-    iter_label = ttk.Label(tab, text='# of Iterations = ' + str(len(tree.get_children())), font=("Courier", 10))
+    root_label = ttk.Label(
+        tab, text=f'Approx. Root = {str(root)}', font=("Courier", 10)
+    )
+
+    time_label = ttk.Label(
+        tab,
+        text=f'Execution Time = {str(end_time - start_time)}',
+        font=("Courier", 10),
+    )
+
+    iter_label = ttk.Label(
+        tab,
+        text=f'# of Iterations = {len(tree.get_children())}',
+        font=("Courier", 10),
+    )
+
 
     if root is None:
         er_label.pack()
@@ -266,9 +318,22 @@ def call_Secant(f, a, b, n, e, tab, button):
     end_time = time.time()
 
     er_label = ttk.Label(tab, text='Secant Failed', font=("Courier", 15))
-    root_label = ttk.Label(tab, text='Approx. Root = ' + str(root), font=("Courier", 10))
-    time_label = ttk.Label(tab, text='Execution Time = ' + str(end_time - start_time), font=("Courier", 10))
-    iter_label = ttk.Label(tab, text='# of Iterations = ' + str(len(tree.get_children())), font=("Courier", 10))
+    root_label = ttk.Label(
+        tab, text=f'Approx. Root = {str(root)}', font=("Courier", 10)
+    )
+
+    time_label = ttk.Label(
+        tab,
+        text=f'Execution Time = {str(end_time - start_time)}',
+        font=("Courier", 10),
+    )
+
+    iter_label = ttk.Label(
+        tab,
+        text=f'# of Iterations = {len(tree.get_children())}',
+        font=("Courier", 10),
+    )
+
 
     if root is None:
         er_label.pack()
